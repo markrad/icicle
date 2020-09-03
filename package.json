@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/markrad/icicle/issues"
   },
-  "homepage": "https://github.com/markrad/icicle#readme"
+  "homepage": "https://github.com/markrad/icicle#readme",
+  "dependencies": {
+    "node-dht-sensor": "^0.4.3",
+    "pigpio": "^3.2.3",
+    "rpio": "^2.2.0",
+    "rpio2": "^0.4.1"
+  }
 }
