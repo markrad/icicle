@@ -1,0 +1,54 @@
+{
+    "directories":
+    [
+        { "loggers": "loggers" },
+        { "endpoints": "endpoints" }
+    ],
+    "items":
+    [
+        {
+            "class": "endpoint",
+            "type": "OutputPin",
+            "name": "motionDetectedLed",
+            "channels": { "input": false, "output": true },
+            "subscriptions": [ "motionDetected" ],
+            "properties":
+            {
+                "pinNumber": 17,
+                "initialState": false,
+                "autoOff": 5000
+            }
+        },
+        {
+            "class": "endpoint",
+            "type": "InputPin",
+            "name": "motionDetected",
+            "channels": { "input": true, "output": false },
+            "poll": 0,
+            "interrupt": true,
+            "properties":
+            {
+                "pinNumber": 12,
+                "fake": 10000
+            }
+        },
+        {
+            "class": "endpoint",
+            "type": "DHT22",
+            "name": "garageSensor",
+            "channels": { "input": true, "output": false },
+            "outputs": [ "garageTemperature", "garageHumidity" ],
+            "poll": 5000,
+            "properties":
+            {
+                "pinNumber": 4,
+                "fake": true
+            }
+        },
+        {
+            "class": "logger",
+            "name": "consolelog",
+            "level": "inf"
+        }
+    ]
+}
